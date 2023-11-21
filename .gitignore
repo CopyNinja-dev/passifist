@@ -1,0 +1,11 @@
+# Deno
+/.deno
+/.cache
+/.vscode
+/.DS_Store
+
+# Compiled Files
+passifist.exe
+
+# Log files
+*.log
