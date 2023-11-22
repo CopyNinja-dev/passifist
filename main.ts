@@ -6,6 +6,15 @@ const PASS_LENGTH = 12
 const masterPass = await Secret.prompt("Enter your password");
 const pin = Number(await Secret.prompt("Enter your pin"));
 const passIndex = clamp(Number(await Secret.prompt("Enter the password index (0-9)")), 0, 9);
+const clearTime = await Select.prompt({
+  message: "How long should the password be copied to the clipboard?",
+  options: [
+    { name: "5 seconds", value: 5 },
+    { name: "30 seconds", value: 30 },
+    { name: "10 minutes", value: 600 },
+    { name: "Don't clear", value: 0 },
+  ]
+});
 
 function clamp(num: number, min: number, max: number) {
   return Math.min(Math.max(num, min), max);
@@ -71,5 +80,7 @@ async function copyToClipboard(text: string) {
 }
 
 await copyToClipboard(d[passIndex])
-await new Promise(resolve => setTimeout(resolve, 5000))
-await copyToClipboard('')
+if (clearTime) {
+  await new Promise(resolve => setTimeout(resolve, clearTime * 1000))
+  await copyToClipboard('')
+}
