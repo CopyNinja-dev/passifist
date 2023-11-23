@@ -1,6 +1,3 @@
-GitHub Copilot: Sure, here's a basic structure for a README.md file for your project:
-
-```markdown
 # Passifist
 
 Passifist is a password manager built with Deno. It uses SHA-512 for hashing and provides a terminal interface for user interaction.
