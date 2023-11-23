@@ -1,4 +1,3 @@
-// Draw a terminal menu using deno
 import { Select, Secret } from "https://deno.land/x/cliffy/prompt/mod.ts";
 
 const PASS_LENGTH = 12
