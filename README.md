@@ -1,4 +1,4 @@
-# Passifist
+# Passifist 🔒✊
 
 Passifist is a password manager built with Deno. It uses SHA-512 for hashing and provides a terminal interface for user interaction.  
 The generated passwords will not be displayed on the screen, instead they are copied to clipboard.  
